@@ -27,6 +27,10 @@
   
     // カメラを作成
     var camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
+
+    // 平行光源
+    var directionalLight = new THREE.DirectionalLight(0xffffff);
+    directionalLight.position.set(1, 1, 1);
   
     // 箱を作成
     var geometry = new THREE.BoxGeometry(1, 1, 1);
@@ -35,9 +39,7 @@
     box.position.z = -5;
     scene.add(box);
   
-    // 平行光源
-    var directionalLight = new THREE.DirectionalLight(0xffffff);
-    directionalLight.position.set(1, 1, 1);
+    
     // シーンに追加
     scene.add(directionalLight);
   
